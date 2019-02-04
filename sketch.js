@@ -190,7 +190,7 @@ function draw() {
     
 	fill('grey');
 	noStroke();
-	ellipse(marsX + 80, marsY - 110, marsSize / 8); //spot 2
+	ellipse(marsX + 80, marsY - 110, marsSize / 6); //spot 2
 	stroke(0);
 
     
@@ -207,9 +207,9 @@ function draw() {
 //    
 //    
 //    
-    fill('grey');
+    fill('yellow');
 	noStroke();
-	ellipse(marsX + 78, marsY, marsSize / 50); //spot 5
+	ellipse(marsX + 78, marsY, marsSize / 70); //spot 5
 	stroke(0);
     
 //    

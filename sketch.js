@@ -37,7 +37,7 @@ function setup() {
 
 
 function draw() {
-	background(50);
+	background(225);
     
 	
 	// first character venus
@@ -146,7 +146,7 @@ function draw() {
     
     noFill();
     
-	fill('purple');
+	fill('black');
 	noStroke();
 	ellipse(marsX, marsY, marsSize);
 	stroke(0);
@@ -154,22 +154,24 @@ function draw() {
 	
     // eye
     
-    fill('black');
+    fill('yellow');
    	ellipse(marsX + marsEyeSize * 3, marsY - marsEyeSize, marsEyeSize);  // left eye
 	ellipse(marsX, marsY - marsEyeSize, marsEyeSize); 		// right eye 
     
-    // pupil
-    fill('yellow')
-    	ellipse(marsX + marsEyeSize * 3, marsY - marsEyeSize, marsEyeSize / 3);  // left pipil
-	ellipse(marsX, marsY - marsEyeSize, marsEyeSize / 3); 		// right pupil
+    // pupils
+    
+    fill('orange') 
+    
+    ellipse(marsX + marsEyeSize * 3, marsY - marsEyeSize + 10, marsEyeSize / 3);  // left pipil
+	ellipse(marsX, marsY - marsEyeSize + 10, marsEyeSize / 3); 		// right pupil
     
     
     // mouth
     
     
-    fill('black')
+    fill('yellow')
     
-    rect(marsX + 40 , marsY + 30, marsSize - 190, 17);
+    rect(marsX + 40 , marsY + 30, marsSize - 220, 17);
     
     
     
@@ -179,33 +181,33 @@ function draw() {
     
    noFill();
     
-	fill('orange');
+	fill('grey');
 	noStroke();
 	ellipse(marsX - 120, marsY - 60, marsSize / 5);  //spot 1
 	stroke(0);
    
     noFill();
     
-	fill('orange');
+	fill('grey');
 	noStroke();
 	ellipse(marsX + 80, marsY - 110, marsSize / 8); //spot 2
 	stroke(0);
 
     
-    fill('orange');
+    fill('grey');
 	noStroke();
 	ellipse(marsX - 80, marsY + 90, marsSize / 8); //spot 3
 	stroke(0);
     
     
-    fill('orange');
+    fill('grey');
 	noStroke();
 	ellipse(marsX + 70, marsY + 100, marsSize / 5); //spot 4
 	stroke(0);
 //    
 //    
 //    
-    fill('orange');
+    fill('grey');
 	noStroke();
 	ellipse(marsX + 78, marsY, marsSize / 50); //spot 5
 	stroke(0);

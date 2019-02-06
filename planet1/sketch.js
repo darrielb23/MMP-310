@@ -32,26 +32,26 @@ var storyY;
     
     
     
-function preload() {
-    g = loadImage("galax5.jpg");
+//function preload() {
+//    g = loadImage("galax5.jpg");
     
     
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
-//	textSize(40);
-//	textAlign(CENTER, CENTER);
-//	storyX = width / 2;
-//	storyY = height - 50;
-//    rectMode(CENTER);
+	textSize(40);
+	textAlign(CENTER, CENTER);
+	storyX = width / 2;
+	storyY = height - 50;
+    rectMode(CENTER);
     
-    image( g, 0, 0, width , height);
-       
-//    function setup() {
-//    createCanvas(930, 500);
-//    image( g, 0, 0, width / 2, height / 2);
-//}
+    
+    g = loadImage("galax5.jpg");  
+    
 //    
+//    image( g, 0, 0, width , height);
+//       
+    
 }
 
 
@@ -59,6 +59,13 @@ function draw() {
 	background(225);
     
 	
+image( g, 0, 0);    
+    
+    
+    
+    
+    
+    
 	// first character venus
     
     
@@ -78,7 +85,7 @@ function draw() {
     //belt
     
     
-
+    stroke('yellow');
     noFill(0);
     
 //    ellipse (venusX + 10, venusY +10, venusSize * 2, venusSize / 2);  // large belt full circle
@@ -249,8 +256,7 @@ function draw() {
     
     
     
-    
 }
-}
+
 
     

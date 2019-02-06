@@ -7,6 +7,10 @@ By Darriel
 
 
 // global variables
+
+
+var g;
+
 var venusX = 200;
 var venusY = 200;
 var venusSize = 200;
@@ -25,14 +29,29 @@ var moonSize = 100;
 var story = "Battle for the universe";
 var storyX;
 var storyY;
+    
+    
+    
+function preload() {
+    g = loadImage("galax5.jpg");
+    
+    
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
-	textSize(40);
-	textAlign(CENTER, CENTER);
-	storyX = width / 2;
-	storyY = height - 50;
-    rectMode(CENTER);
+//	textSize(40);
+//	textAlign(CENTER, CENTER);
+//	storyX = width / 2;
+//	storyY = height - 50;
+//    rectMode(CENTER);
+    
+    image( g, 0, 0, width , height);
+       
+//    function setup() {
+//    createCanvas(930, 500);
+//    image( g, 0, 0, width / 2, height / 2);
+//}
+//    
 }
 
 
@@ -231,7 +250,7 @@ function draw() {
     
     
     
-    
+}
 }
 
     

@@ -31,9 +31,12 @@ var storyX;
 var storyY;
     
     
-    
-//function preload() {
-//    g = loadImage("galax5.jpg");
+// settings: day, evening, night - lightblue, mediumslateblue, darkblue
+var currentSetting = "day";
+
+var venusWasClicked = false;
+var marsWasClicked = false;
+
     
     
 
@@ -47,19 +50,91 @@ function setup() {
     
     
     g = loadImage("galax5.jpg");  
-    
-//    
-//    image( g, 0, 0, width , height);
-//       
+      
     
 }
 
 
+
+
+
+
 function draw() {
-	background(225);
     
-	
-image( g, 0, 0);    
+    //settings
+    
+	background(225);
+    image( g, 0, 0);    
+    
+    
+    
+    
+    
+    
+    
+    
+  if (currentSetting == "day") {
+		fill('gold');
+		noStroke();
+		ellipse(sunX, sunY, sunSize);
+		
+		// to change the scene
+		if (mouseIsPressed) {
+			currentSetting = "evening";
+			bgColor = "mediumslateblue";
+		}
+		
+	} else if (currentSetting == "evening") {
+		fill('orange');
+		noStroke();
+		ellipse(sunX, sunY + 100, sunSize);
+		
+		// click on a character to eat it
+		if (mouseIsPressed) {
+			var orangeDistance = dist(mouseX, mouseY, orangeX, orangeY);
+			if (orangeDistance < orangeSize / 2) {
+				fruitEaten = "orange";
+				orangeWasClicked = true;
+				currentSetting = "night";
+				bgColor = "darkblue";
+			}
+			var bananaDistance = dist(mouseX, mouseY, bananaX, bananaY);
+			if (bananaDistance < bananaSize / 2) {
+				fruitEaten = "banana";
+				bananaWasClicked = true;
+				currentSetting = "night";
+				bgColor = "darkblue";
+			}
+		}
+		
+	} else if (currentSetting == "night") {
+		fill('crimson');
+		noStroke();
+		ellipse(sunX, sunY + 200, sunSize);
+	}  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

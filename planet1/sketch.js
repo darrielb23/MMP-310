@@ -158,10 +158,10 @@ function draw() {
 		
     
     
-//	} else if (currentSetting == "night") {
-//		fill('crimson');
-//		noStroke();
-//		ellipse(sunX, sunY + 200, sunSize);
+	} else if (currentSetting == "night") {
+		fill('red');
+		noStroke();
+		ellipse(sunX, sunY + 200, sunSize);
 	}  
     
     

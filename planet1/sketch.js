@@ -59,9 +59,8 @@ function setup() {
     rectMode(CENTER);
     
     
-        g  = loadImage("galax5.jpg");  
-        g1 = loadImage("galax0.jpg");  
-        g2 = loadImage("galax3.jpg"); 
+        g1  = loadImage("galax5.jpg");  
+        g2 = loadImage("galax0.jpg");  
         g3 = loadImage("galax4.gif");
         g4 = loadImage("galax6.jpg");
         g5 = loadImage("galax7.jpg");
@@ -79,14 +78,14 @@ function draw() {
 
     // day
   if (currentSetting == "day") {
-       image( g, 0, 0);
+       image( g1, 0, 0);
 		
     
 		
 		// to change the scene
 		if (mouseIsPressed) {
 			currentSetting = "evening";
-            image( g1, 0, 0);
+            image( g2, 0, 0, height, width);
             
 
             fill('red');
@@ -122,13 +121,13 @@ function draw() {
 		
       // evening
 	} else if (currentSetting == "evening") {
-       image( g2, 0, 0);
-		fill('pink');
+       image( g6, 0, 0);
+		fill('purple');
 		noStroke();
 		ellipse(sunX, sunY + 150, sunSize);
-    
-      
-      
+        fill('red');
+        ellipse(sunX, sunY + 250, sunSize);
+       
       
 		
 		// click on a character to change the scene

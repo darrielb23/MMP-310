@@ -1,7 +1,7 @@
 /*
 MMP310 week 1
 Interactive Story
-Characters Sketch
+Setting Sketch
 By Darriel
 */
 

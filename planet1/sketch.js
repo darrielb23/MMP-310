@@ -14,6 +14,9 @@ var g1;
 var g2;
 var g3;
 var g4;
+var g5;
+var g6;
+var g7;
 
 var venusX = 200;
 var venusY = 200;
@@ -41,9 +44,9 @@ var currentSetting = "day";
 var venusWasClicked = false;
 var marsWasClicked = false;
 
-var sunX= 100;
+var sunX= 740;
 var sunY = 100;
-var sunSize = 100;
+var sunSize = 150;
     
     
 
@@ -56,16 +59,15 @@ function setup() {
     rectMode(CENTER);
     
     
-    g  = loadImage("galax5.jpg");  
-    g1 = loadImage("galax2.jpg");  
-    g2 = loadImage("galax8.jpg"); 
-    g3 = loadImage("galax7.jpg");
-    g4 = loadImage("galax9.jpg");
-}
-
-
-
-
+        g  = loadImage("galax5.jpg");  
+        g1 = loadImage("galax0.jpg");  
+        g2 = loadImage("galax3.jpg"); 
+        g3 = loadImage("galax4.gif");
+        g4 = loadImage("galax6.jpg");
+        g5 = loadImage("galax7.jpg");
+        g6 = loadImage("galax8.jpg");
+        g7 = loadImage("galax9.jpg");
+    }
 
 
 function draw() {
@@ -74,39 +76,62 @@ function draw() {
     
 	background(225);
        
-    
-    
-    
-    
-    
-    
-    
+
+    // day
   if (currentSetting == "day") {
        image( g, 0, 0);
-		fill('red');
-		noStroke();
-		ellipse(sunX, sunY, sunSize);
+		
+    
 		
 		// to change the scene
 		if (mouseIsPressed) {
 			currentSetting = "evening";
+            image( g1, 0, 0);
+            
+
+            fill('red');
+            noStroke();
+            ellipse(sunX, sunY, sunSize);   
+            
+            
+    
+            
+            
+//            
+//            stroke('yellow');
+//            noFill(0);
+//
+//            arc (sunX + 10, sunY +10, sunSize * 2, sunSize / 2, -1, PI + 0.3);  // large belts arc
+//
+//            noFill(0);
+//
+//            ellipse (sunX + 10, sunY +10, sunSize * 1.8, sunSize / 2.6); // small belt circle      
+            
+            
+            
             
            
 		
 		}
-		
       
+      
+      
+      
+      
+//(venussize = 200 * 4)
+		
+      // evening
 	} else if (currentSetting == "evening") {
        image( g2, 0, 0);
-		fill('orange');
+		fill('pink');
 		noStroke();
-		ellipse(sunX, sunY + 100, sunSize);
+		ellipse(sunX, sunY + 150, sunSize);
     
       
       
       
 		
-		// click on a character to eat it
+		// click on a character to change the scene
 		if (mouseIsPressed) {
 			var venusDistance = dist(mouseX, mouseY, venusX, venusY);
     
@@ -133,10 +158,10 @@ function draw() {
 		
     
     
-	} else if (currentSetting == "night") {
-		fill('crimson');
-		noStroke();
-		ellipse(sunX, sunY + 200, sunSize);
+//	} else if (currentSetting == "night") {
+//		fill('crimson');
+//		noStroke();
+//		ellipse(sunX, sunY + 200, sunSize);
 	}  
     
     
@@ -189,7 +214,7 @@ function draw() {
     stroke('yellow');
     noFill(0);
     
-//    ellipse (venusX + 10, venusY +10, venusSize * 2, venusSize / 2);  // large belt full circle
+    //    ellipse (venusX + 10, venusY +10, venusSize * 2, venusSize / 2);  // large belt full circle
     
     arc (venusX + 10, venusY +10, venusSize * 2, venusSize / 2, -1, PI + 0.3);  // large belts arc
      
@@ -200,7 +225,7 @@ function draw() {
     
     ellipse (venusX + 10, venusY +10, venusSize * 1.8, venusSize / 2.6); // small belt circle
     
-//    arc (venusX + 10, venusY +10, venusSize * 2, venusSize / 2, -1, PI + 0.3);  // large belts arc
+    //    arc (venusX + 10, venusY +10, venusSize * 2, venusSize / 2, -1, PI + 0.3);  // large belts arc
     
     
     

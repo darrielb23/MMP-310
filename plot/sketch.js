@@ -21,6 +21,7 @@ var g7;
 var venusX = 200;
 var venusY = 200;
 var venusSize = 200;
+var venusSize2 = 200 * 4;
 var venusEyeSize = venusSize / 10;
 
 var marsX = 930;
@@ -87,7 +88,7 @@ function draw() {
         noFill();
         fill('LIGHTSKYBLUE');
         noStroke();
-        ellipse(venusX, venusY, venusSize);
+        ellipse(venusX, venusY, venusSize); 
         stroke(0);
 
         //belt
@@ -378,7 +379,7 @@ function draw() {
         noFill();
         fill('LIGHTSKYBLUE');
         noStroke();
-        ellipse(venusX, venusY, venusSize + 20);
+        ellipse(venusX, venusY, venusSize);
         stroke(0);
 
         //belt
@@ -419,20 +420,6 @@ function draw() {
         rect(venusX + 40, venusY + 30, venusSize - 190, 17);
 
 
-
-//        // second character half moon
-//
-//
-//
-//        fill('yellow');
-//        noStroke();
-//        arc(moonX, moonY, moonSize, moonSize, -HALF_PI, HALF_PI); // moon background
-//        fill(50);
-//        arc(moonX, moonY, moonSize / 2, moonSize, -HALF_PI, HALF_PI); // moon foreground
-//        noFill();
-//        stroke(0);
-//        arc(moonX, moonY, moonSize * 3 / 4, moonSize, -HALF_PI, HALF_PI); // moon contour
-
         stroke(255);
         text(story, storyX, storyY);
         
@@ -470,6 +457,9 @@ function draw() {
         // no key is pressed (beginning)
         
         image(g1, 0, 0, width, height)
+
+ stroke(255);
+        text(story, storyX, storyY - 310);
         
         
         

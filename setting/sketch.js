@@ -20,7 +20,7 @@ var g7;
 
 var venusX = 200;
 var venusY = 200;
-var venusSize = 200;
+var venusSize = 200 * 4;  //(venussize = 200 * 4)
 var venusEyeSize = venusSize / 10;
 
 var marsX = 930;

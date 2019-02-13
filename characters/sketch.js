@@ -234,8 +234,6 @@ function draw() {
 	stroke(0); 
     
     
-    
-    
 }
 
 

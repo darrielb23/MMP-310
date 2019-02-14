@@ -82,51 +82,8 @@ function draw() {
     // sun setting
     if (key == 'a') {
         
-        venus();
-        // first character venus
-        //body
-        noFill();
-        fill('LIGHTSKYBLUE');
-        noStroke();
-        ellipse(venusX, venusY, venusSize2); 
-        stroke(0);
-
-        //belt
-        stroke('yellow');
-        noFill(0);
-
-        //    ellipse (venusX + 10, venusY +10, venusSize * 2, venusSize / 2);  // large belt full circle
-
-        arc(venusX + 10, venusY + 10, venusSize2 * 2, venusSize2 / 2, -1, PI + 0.3); // large belts arc
-
-        noFill(0);
-
-        ellipse(venusX + 10, venusY + 10, venusSize2 * 1.8, venusSize2 / 2.6); // small belt circle
-
-        //    arc (venusX + 10, venusY +10, venusSize * 2, venusSize / 2, -1, PI + 0.3);  // large belts arc
-
-        // eye hider ellipse
-
-        fill('lightskyblue')
-        noStroke();
-        ellipse(venusX, venusY - 20, venusSize2 - 4, 90);
-
-        // eye
-
-        fill('black');
-        ellipse(venusX + venusEyeSize * 3, venusY - venusEyeSize, venusEyeSize); // left eye
-        ellipse(venusX, venusY - venusEyeSize, venusEyeSize); // right eye 
-
-        // pupil
-        fill('yellow')
-        ellipse(venusX + venusEyeSize * 3, venusY - venusEyeSize, venusEyeSize / 3); // left pipil
-        ellipse(venusX, venusY - venusEyeSize, venusEyeSize / 3); // right pupil
-
-        // mouth
-
-
-        fill('black')
-        rect(venusX + 40, venusY + 30, venusSize2 - 190, 17);   	
+        venus();  // first character venus
+       
 
 
         stroke(255);
@@ -470,6 +427,68 @@ function draw() {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
 function venus() {
+    
+    
+     //body
+        noFill();
+        fill('LIGHTSKYBLUE');
+        noStroke();
+        ellipse(venusX, venusY, venusSize2); 
+        stroke(0);
+
+        //belt
+        stroke('yellow');
+        noFill(0);
+
+        //    ellipse (venusX + 10, venusY +10, venusSize * 2, venusSize / 2);  // large belt full circle
+
+        arc(venusX + 10, venusY + 10, venusSize2 * 2, venusSize2 / 2, -1, PI + 0.3); // large belts arc
+
+        noFill(0);
+
+        ellipse(venusX + 10, venusY + 10, venusSize2 * 1.8, venusSize2 / 2.6); // small belt circle
+
+        //    arc (venusX + 10, venusY +10, venusSize * 2, venusSize / 2, -1, PI + 0.3);  // large belts arc
+
+        // eye hider ellipse
+
+        fill('lightskyblue')
+        noStroke();
+        ellipse(venusX, venusY - 20, venusSize2 - 4, 90);
+
+        // eye
+
+        fill('black');
+        ellipse(venusX + venusEyeSize * 3, venusY - venusEyeSize, venusEyeSize); // left eye
+        ellipse(venusX, venusY - venusEyeSize, venusEyeSize); // right eye 
+
+        // pupil
+        fill('yellow')
+        ellipse(venusX + venusEyeSize * 3, venusY - venusEyeSize, venusEyeSize / 3); // left pipil
+        ellipse(venusX, venusY - venusEyeSize, venusEyeSize / 3); // right pupil
+
+        // mouth
+
+
+        fill('black')
+        rect(venusX + 40, venusY + 30, venusSize2 - 190, 17);   	
+    
+    
+    
+    
+    
+    
+    
     
 }

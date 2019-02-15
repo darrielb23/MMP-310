@@ -395,15 +395,13 @@ function draw() {
         ellipse(venusX + 10, venusY + 10, venusSize * 1.8, venusSize / 2.6); // small belt circle
 
         //    arc (venusX + 10, venusY +10, venusSize * 2, venusSize / 2, -1, PI + 0.3);  // large belts arc
-
+        
+        
         // eye hider ellipse
 
-        fill('red')
+        fill('lightskyblue')
         noStroke();
-        ellipse(venusX - 10, venusY - venusSize / 5.7 , venusSize - 30, venusSize2 - 70);
-        
-        
-        
+        ellipse(venusX - 5, venusY - venusSize / 6.6 , venusSize - 29, venusSize2 - 70);
         
 
         // eye

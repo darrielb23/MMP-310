@@ -463,7 +463,7 @@ function draw() {
     } else {
         // no key is pressed (beginning)
         
-        image(g1, 0, 0, width, height)
+        image(g5, 0, 0, width, height)
 
  stroke(255);
 fill('yellow')

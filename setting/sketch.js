@@ -35,6 +35,7 @@ var moonY = 100;
 var moonSize = 100;
 
 var story = "Battle for the universe";
+var story2 = "Click A, B and C to change setting";
 var storyX;
 var storyY;
 
@@ -60,13 +61,13 @@ function setup() {
     rectMode(CENTER);
 
 
-    g1 = loadImage("galax5.jpg");
-    g2 = loadImage("galax0.jpg");
-    g3 = loadImage("galax4.gif");
-    g4 = loadImage("galax6.jpg");
-    g5 = loadImage("galax7.jpg");
-    g6 = loadImage("galax8.jpg");
-    g7 = loadImage("galax9.jpg");
+    g1 = loadImage("galax1.jpg");
+    g2 = loadImage("galax2.jpg");
+    g3 = loadImage("galax3.jpg");
+    g4 = loadImage("galax4.jpg");
+    g5 = loadImage("galax5.jpg");
+    g6 = loadImage("galax6.jpg");
+    g7 = loadImage("galax7.jpg");
 }
 
 
@@ -82,9 +83,13 @@ function draw() {
     // sun setting
     if (key == 'a') {
         
-        venus();
-        // first character venus
+      
+        
+       // first character venus
+        
+        
         //body
+        
         noFill();
         fill('LIGHTSKYBLUE');
         noStroke();
@@ -461,13 +466,12 @@ function draw() {
         image(g1, 0, 0, width, height)
 
  stroke(255);
+fill('yellow')
         text(story, storyX, storyY - 310);
+        text(story2, storyX, storyY - 610);
         
         
         
     }
 }
 
-function venus() {
-    
-}

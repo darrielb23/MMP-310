@@ -20,8 +20,8 @@ function setup() {
 		
 		faceSize = random(50, 100);
 		
-		let r = random(0);
-		let g = random(0);
+		let r = random(100);
+		let g = random(100);
 		let b = random(255);
 		fill(r, g, b);
         

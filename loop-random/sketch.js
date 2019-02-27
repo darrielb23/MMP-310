@@ -51,7 +51,14 @@ function setup() {
 			rect(x - eyeSize, y - eyeSize, eyeSize, eyeSize); // right eye
 		}
 		 
-
+//       else if {
+//            
+//            
+//            
+//			triangle(x + eyeSize, y - eyeSize, eyeSize, eyeSize); // left eye
+//			triangle(x - eyeSize, y - eyeSize, eyeSize, eyeSize); // right eye
+//		}
+		 
     
        //  mouth
     

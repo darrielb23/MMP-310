@@ -123,7 +123,7 @@ function draw() {
         
         
         
-      narrative( "5 years later King Pletus and Venus made 30 kids, only 4 survived.", " 'where are the spots where are the spots' King Pletus yelled", "Click Spacebar", 400, height - 150, height - 100);
+      narrative( "5 years later King Pletus and Venus made 30 kids, but only 4 survived.", " 'where are the spots', 'where are the spots' King Pletus yelled", "Click Spacebar", 400, height - 150, height - 100);
     
 
 

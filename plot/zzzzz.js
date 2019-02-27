@@ -1,163 +1,100 @@
-// sun setting
-    if (key == 'a') {
-        
-        venus();
-        // first character venus
-        //body
-        noFill();
-        fill('LIGHTSKYBLUE');
-        noStroke();
-        ellipse(venusX, venusY, venusSize);
-        stroke(0);
+/*
+	mmp 310 week 3
+	interactive story
+	plot sketch, adding functions
+*/
 
-        //belt
-        stroke('yellow');
-        noFill(0);
+// global variables
+var chapter = "morning"; // day, night
+var whichFruit;
 
-        //    ellipse (venusX + 10, venusY +10, venusSize * 2, venusSize / 2);  // large belt full circle
-
-        arc(venusX + 10, venusY + 10, venusSize * 2, venusSize / 2, -1, PI + 0.3); // large belts arc
-
-        noFill(0);
-
-        ellipse(venusX + 10, venusY + 10, venusSize * 1.8, venusSize / 2.6); // small belt circle
-
-        //    arc (venusX + 10, venusY +10, venusSize * 2, venusSize / 2, -1, PI + 0.3);  // large belts arc
-
-        // eye hider ellipse
-
-        fill('lightskyblue')
-        noStroke();
-        ellipse(venusX, venusY - 20, venusSize - 4, 50);
-
-        // eye
-
-        fill('black');
-        ellipse(venusX + venusEyeSize * 3, venusY - venusEyeSize, venusEyeSize); // left eye
-        ellipse(venusX, venusY - venusEyeSize, venusEyeSize); // right eye 
-
-        // pupil
-        fill('yellow')
-        ellipse(venusX + venusEyeSize * 3, venusY - venusEyeSize, venusEyeSize / 3); // left pipil
-        ellipse(venusX, venusY - venusEyeSize, venusEyeSize / 3); // right pupil
-
-        // mouth
-
-
-        fill('black')
-        rect(venusX + 40, venusY + 30, venusSize - 190, 17);
-
-
-        //
-        //    	// second character half moon
-        //        
-        //        
-        //        
-        //    	fill('yellow');
-        //    	noStroke();
-        //    	arc(moonX, moonY, moonSize, moonSize, -HALF_PI, HALF_PI); // moon background
-        //    	fill(50);
-        //    	arc(moonX, moonY, moonSize / 2, moonSize, -HALF_PI, HALF_PI); // moon foreground
-        //    	noFill();
-        //    	stroke(0);
-        //    	arc(moonX, moonY, moonSize * 3/4, moonSize, -HALF_PI, HALF_PI); // moon contour
-        //    	
-
-
-        stroke(255);
-        text(story, storyX, storyY);
-
-
-
-
-        //     third character mars
-
-        //body
-
-
-        noFill();
-
-        fill('black');
-        noStroke();
-        ellipse(marsX, marsY, marsSize);
-        stroke(0);
-
-
-        // eye
-
-        fill('yellow');
-        ellipse(marsX + marsEyeSize * 3, marsY - marsEyeSize, marsEyeSize); // left eye
-        ellipse(marsX, marsY - marsEyeSize, marsEyeSize); // right eye 
-
-        // pupils
-
-        fill('orange')
-
-        ellipse(marsX + marsEyeSize * 3, marsY - marsEyeSize + 10, marsEyeSize / 3); // left pipil
-        ellipse(marsX, marsY - marsEyeSize + 10, marsEyeSize / 3); // right pupil
-
-
-        // mouth
-
-
-        fill('yellow')
-
-        rect(marsX + 40, marsY + 30, marsSize - 220, 17);
-
-
-
-
-        // mars spots
-
-
-        noFill();
-
-        fill('grey');
-        noStroke();
-        ellipse(marsX - 120, marsY - 60, marsSize / 5); //spot 1
-        stroke(0);
-
-        noFill();
-
-        fill('grey');
-        noStroke();
-        ellipse(marsX + 80, marsY - 110, marsSize / 6); //spot 2
-        stroke(0);
-
-
-        fill('grey');
-        noStroke();
-        ellipse(marsX - 80, marsY + 90, marsSize / 8); //spot 3
-        stroke(0);
-
-
-        fill('grey');
-        noStroke();
-        ellipse(marsX + 70, marsY + 100, marsSize / 5); //spot 4
-        stroke(0);
-        //    
-        //    
-        //    
-        fill('yellow');
-        noStroke();
-        ellipse(marsX + 78, marsY, marsSize / 70); //spot 5
-        stroke(0);
-
-        //    
-        //    
-        //   fill('red');
-        //	noStroke();
-        //	ellipse(marsX - 20, marsY - 100, marsSize / 10); //spot 6
-        //	stroke(0); 
-
-
-
-
-function venus() {
-
-
-
+function setup() {
+	createCanvas(windowWidth, windowHeight);
+	textAlign(CENTER, CENTER);
+	textFont('Hanalei Fill');
 }
+
+function draw() {
+	background(50);
+	
+	if (chapter == "morning") {
+		orange(100, 200);  // first character
+		banana(200, 100); // second character
+		narrative("Once upon a time, there was an orange and a banana.", "Click anywhere to continue.");
+	} else if (chapter == "day") {
+		orange(300, 150);  
+		banana(400, 75);
+		narrative("Then the user ate one of them.", "Click on one of the characters to eat it.");
+	} else if (chapter == "night") {
+		if (whichFruit == "banana") {
+			orange(600, 100); 
+			narrative("The orange was alone forever.", "Click anywhere to start over.");
+		}
+		if (whichFruit == "orange") {
+			banana(700, 50);
+			narrative("The banana was alone forever.", "Click anywhere to start over.");
+		}
+	}
+}
+
+function mouseClicked() {
+	// change chapter
+	if (chapter == "morning") chapter = "day";
+//	else if (chapter == "day") chapter = "night";
+	else if (chapter == "night") chapter = "morning";
+	
+	// detect which character is clicked
+	else if (chapter == "day") {
+		// clicked the orange
+		var orangeDist = dist(mouseX, mouseY, 300, 200);
+		if (orangeDist < 150 / 2) {
+			whichFruit = "orange";
+			chapter = "night";
+		}
+		// clicked banana
+		var bananaDist = dist(mouseX, mouseY, 400, 100);
+		if (bananaDist < 75 / 2) {
+			whichFruit = "banana";
+			chapter = "night";
+		}
+	}
+}
+
+function orange(x, s) {
+	var eyeSize = s / 10;
+	fill('DARKORANGE');
+	noStroke();
+	ellipse(x, 200, s);  	// body
+	
+	stroke(0);
+	ellipse(x + eyeSize * 3, 200 - eyeSize, eyeSize);  // left eye
+	ellipse(x, 200 - eyeSize, eyeSize); 		// right eye
+	
+//	rect(100, 220, s / 2, s / 4); // mouth
+}
+
+function banana(x, s) {
+	fill('yellow');
+	noStroke();
+	arc(x, 100, s, s, -HALF_PI, HALF_PI); // banana background
+	fill(50);
+	arc(x, 100, s / 2, s, -HALF_PI, HALF_PI); // banana foreground
+	noFill();
+	stroke(0);
+	arc(x, 100, s * 3/4, s, -HALF_PI, HALF_PI); // banana contour
+}
+
+function narrative(story, instructions) {
+	// narrative
+	stroke(255);
+	textSize(30);
+	text(story, width / 2, height - 100);
+	// instructions
+	textSize(20);
+	text(instructions, width / 2, height - 50);
+}
+
+
 
 
 

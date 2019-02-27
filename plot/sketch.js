@@ -8,7 +8,8 @@ By Darriel
 
 // global variables
 
-
+//
+var g;
 var g1;
 var g2;
 var g3;
@@ -16,46 +17,36 @@ var g4;
 var g5;
 var g6;
 var g7;
-
-var venusX = 200;
-var venusY = 200;
-var venusSize2 = 200;
-var venusSize = 200 * 4;
-var venusEyeSize = venusSize2 / 10;
-
-var marsX = 930;
-var marsY = 450;
-var marsSize = 350;
-var marsEyeSize = marsSize / 10;
-
-
-var moonX = 600;
-var moonY = 100;
-var moonSize = 100;
-
-var story = "Battle for the universe";
-var story2 = "Click A, B and C to change setting";
-var storyX;
-var storyY;
-
-
-// settings: day, evening, night - lightblue, mediumslateblue, darkblue
-var currentSetting = "day";
-
-var venusWasClicked = false;
-var marsWasClicked = false;
-
-var sunX = 740;
-var sunY = 100;
-var sunSize = 150;
-
-
-
+//
+//var venusX = 200;
+//var venusY = 200;
+//var venusSize2 = 200 * 4;
+//var venusSize = 200;
+//var venusEyeSize = venusSize2 / 10;
+//
+//var marsX = 930;
+//var marsY = 450;
+//var marsSize = 350;
+//var marsEyeSize = marsSize / 10;
+//
+//
+//var moonX = 600;
+//var moonY = 100;
+//var moonSize = 100;
+//
+//var story = "Battle for the universe";
+//var instruction = "Click A, B and C to change setting";
+//var storyX;
+//var storyY;
+//
+//
+//var sunX = 740;
+//var sunY = 100;
+//var sunSize = 200;
 
 function preload() {
     
-    
-    g1 = loadImage("galax1.jpg");
+
     g2 = loadImage("galax2.jpg");
     g3 = loadImage("galax3.jpg");
     g4 = loadImage("galax4.jpg");
@@ -64,29 +55,17 @@ function preload() {
     g7 = loadImage("galax7.jpg");
 }
 
-
-
-
-
-
-
-
-
 function setup() {
+    
     createCanvas(windowWidth, windowHeight);
-    textSize(40);
     textAlign(CENTER, CENTER);
-    storyX = width / 2;
-    storyY = height - 50;
     rectMode(CENTER);
-
-
 
 
 }
 
 
-
+//(story, instructions, instructions2, x, y, y2)
 
 
 
@@ -95,357 +74,68 @@ function draw() {
     noStroke();
     background(175);   
 
-    // sun setting
-    if (key == 'a') {
+    
+    
+    if (key == 'a'|| key == "A") {
+     
+     image(g7 , 0, 0, width, height)
+     venus(1000,580,200,"LIGHTSKYBLUE"); // first character
+     mars (200,200, 300); // second character
+     narrative( "Out of all the planets in the universe King Pletus Lord of all Planets, was in love with", " the color blue so much that he married the only blue planet in the universe, Venus.", "Click B to continue", 400, height - 150, height - 100);
+
+
+        
+
+    } else if (key == 'b'|| key == "B") {
+
+     background (125);
+        
+      
         
         
-       image(g1, 0, 0, width, height);
+     venus(200,200,600,"LIGHTSKYBLUE"); // first character
+     mars (930, 500, 350); // second character
+     moon(1140, 120, 200);   // third character
         
-        venus();  // first character venus
-       
+     narrative( "Venus already had 5 children at the time. NaNa the King's most trusted advisor", " advised him against the marriage. But King Pletus irgnored him.", "Click C to continue", 400, height - 150, height - 100);
 
-
-        stroke(255);
-        text(story, storyX, storyY);
-
-
-
-        //     third character mars
-
-        //body
-
-
-        noFill();
-
-        fill('black');
-        noStroke();
-        ellipse(marsX, marsY, marsSize);
-        stroke(0);
-
-
-        // eye
-
-        fill('yellow');
-        ellipse(marsX + marsEyeSize * 3, marsY - marsEyeSize, marsEyeSize); // left eye
-        ellipse(marsX, marsY - marsEyeSize, marsEyeSize); // right eye 
-
-        // pupils
-
-        fill('orange');
-
-        ellipse(marsX + marsEyeSize * 3, marsY - marsEyeSize + 10, marsEyeSize / 3); // left pipil
-        ellipse(marsX, marsY - marsEyeSize + 10, marsEyeSize / 3); // right pupil
-
-
-        // mouth
-
-
-        fill('yellow');
-
-        rect(marsX + 40, marsY + 30, marsSize - 220, 17);
-
-
-
-
-        // mars spots
-
-
-        noFill();
-
-        fill('grey');
-        noStroke();
-        ellipse(marsX - 120, marsY - 60, marsSize / 5); //spot 1
-        stroke(0);
-
-        noFill();
-
-        fill('grey');
-        noStroke();
-        ellipse(marsX + 80, marsY - 110, marsSize / 6); //spot 2
-        stroke(0);
-
-
-        fill('grey');
-        noStroke();
-        ellipse(marsX - 80, marsY + 90, marsSize / 8); //spot 3
-        stroke(0);
-
-
-        fill('grey');
-        noStroke();
-        ellipse(marsX + 70, marsY + 100, marsSize / 5); //spot 4
-        stroke(0);
-        //    
-        //    
-        //    
-        fill('yellow');
-        noStroke();
-        ellipse(marsX + 78, marsY, marsSize / 70); //spot 5
-        stroke(0);
-
-        //    
-        //    
-        //   fill('red');
-        //	noStroke();
-        //	ellipse(marsX - 20, marsY - 100, marsSize / 10); //spot 6
-        //	stroke(0); 
-
-
-
-    } else if (key == 'b') {
-
-
-        // first character venus
-        //body
-        noFill();
-        fill('LIGHTSKYBLUE');
-        noStroke();
-        ellipse(venusX, venusY, venusSize2);
-        stroke(0);
-
-        //belt
-        stroke('yellow');
-        noFill(0);
-
-        //    ellipse (venusX + 10, venusY +10, venusSize * 2, venusSize / 2);  // large belt full circle
-
-        arc(venusX + 10, venusY + 10, venusSize2 * 2, venusSize2 / 2, -1, PI + 0.3); // large belts arc
-
-        noFill(0);
-
-        ellipse(venusX + 10, venusY + 10, venusSize2 * 1.8, venusSize2 / 2.6); // small belt circle
-
-        //    arc (venusX + 10, venusY +10, venusSize * 2, venusSize / 2, -1, PI + 0.3);  // large belts arc
-
-        // eye hider ellipse
-
-        fill('lightskyblue');
-        noStroke();
-        ellipse(venusX, venusY - 20, venusSize2 - 4, 50);
-
-        // eye
-
-        fill('black');
-        ellipse(venusX + venusEyeSize * 3, venusY - venusEyeSize, venusEyeSize); // left eye
-        ellipse(venusX, venusY - venusEyeSize, venusEyeSize); // right eye 
-
-        // pupil
-        fill('yellow');
-        ellipse(venusX + venusEyeSize * 3, venusY - venusEyeSize, venusEyeSize / 3); // left pipil
-        ellipse(venusX, venusY - venusEyeSize, venusEyeSize / 3); // right pupil
-
-        // mouth
-
-
-        fill('black');
-        rect(venusX + 40, venusY + 30, venusSize2 - 190, 17);
-
-
-
-        // second character half moon
-
-
-
-        fill('yellow');
-        noStroke();
-        arc(moonX, moonY, moonSize, moonSize, -HALF_PI, HALF_PI); // moon background
-        fill(175);
-        arc(moonX, moonY, moonSize / 2, moonSize, -HALF_PI, HALF_PI); // moon foreground
-        noFill();
-        stroke(0);
-        arc(moonX, moonY, moonSize * 3 / 4, moonSize, -HALF_PI, HALF_PI); // moon contour
-
-
-
-        stroke(255);
-        text(story, storyX, storyY);
-
-
-
-
-        //     third character mars
-
-        //body
-
-
-        noFill();
-
-        fill('black');
-        noStroke();
-        ellipse(marsX, marsY, marsSize);
-        stroke(0);
-
-
-        // eye
-
-        fill('yellow');
-        ellipse(marsX + marsEyeSize * 3, marsY - marsEyeSize, marsEyeSize); // left eye
-        ellipse(marsX, marsY - marsEyeSize, marsEyeSize); // right eye 
-
-        // pupils
-
-        fill('orange');
-
-        ellipse(marsX + marsEyeSize * 3, marsY - marsEyeSize + 10, marsEyeSize / 3); // left pipil
-        ellipse(marsX, marsY - marsEyeSize + 10, marsEyeSize / 3); // right pupil
-
-
-        // mouth
-
-
-        fill('yellow');
-
-        rect(marsX + 40, marsY + 30, marsSize - 220, 17);
-
-
-
-
-        // mars spots
-
-
-        noFill();
-
-        fill('grey');
-        noStroke();
-        ellipse(marsX - 120, marsY - 60, marsSize / 5); //spot 1
-        stroke(0);
-
-        noFill();
-
-        fill('grey');
-        noStroke();
-        ellipse(marsX + 80, marsY - 110, marsSize / 6); //spot 2
-        stroke(0);
-
-
-        fill('grey');
-        noStroke();
-        ellipse(marsX - 80, marsY + 90, marsSize / 8); //spot 3
-        stroke(0);
-
-
-        fill('grey');
-        noStroke();
-        ellipse(marsX + 70, marsY + 100, marsSize / 5); //spot 4
-        stroke(0);
-        //    
-        //    
-        //    
-        fill('yellow');
-        noStroke();
-        ellipse(marsX + 78, marsY, marsSize / 70); //spot 5
-        stroke(0);
-
-        //    
-        //    
-        //   fill('red');
-        //	noStroke();
-        //	ellipse(marsX - 20, marsY - 100, marsSize / 10); //spot 6
-        //	stroke(0); 
-
+ 
+ 
 
 
     } else if (key == 'c' || key == "C") {
 
-
-
-
-        // first character venus
-        //body
-        noFill();
-        fill('LIGHTSKYBLUE');
-        noStroke();
-        ellipse(venusX, venusY, venusSize);
-        stroke(0);
-
-        //belt
-        stroke('yellow');
-        noFill(0);
-
-        //    ellipse (venusX + 10, venusY +10, venusSize * 2, venusSize / 2);  // large belt full circle
-
-        arc(venusX + 10, venusY + 10, venusSize * 2, venusSize / 2, -1, PI + 0.3); // large belts arc
-
-        noFill(0);
-
-        ellipse(venusX + 10, venusY + 10, venusSize * 1.8, venusSize / 2.6); // small belt circle
-
-        //    arc (venusX + 10, venusY +10, venusSize * 2, venusSize / 2, -1, PI + 0.3);  // large belts arc
-
-        // eye hider ellipse
-
-        fill('red');
-        noStroke();
-        ellipse(venusX - 10, venusY - venusSize / 5.7 , venusSize - 30, venusSize2 - 70);
+      image(g4, 0, 0, width, height)
+      venus(200,200,200,"LIGHTSKYBLUE"); // first character
+        
+      venus(980, 100, 100,"red"); // baby 1
+      venus(800, 200, 100,"lightgreen"); // baby 2
+      venus(1110, 220, 100,"purple"); // baby 3
+      venus(650, 400, 100,"orange"); // baby 4
+      venus(900, 500, 100,"lightskyblue"); // baby 5
+      venus(1160, 600, 100,"white"); // baby 6
+      venus(1100, 400, 100,"yellow"); // baby 7
+      venus(890, 330, 100,"pink"); // baby 8
+      venus(100, 300, 100,"brown"); // baby 9
         
         
         
         
-
-        // eye
-
-        fill('black');
-        ellipse(venusX + venusEyeSize * 3, venusY - venusEyeSize, venusEyeSize); // left eye
-        ellipse(venusX, venusY - venusEyeSize, venusEyeSize); // right eye 
-
-        // pupil
-        fill('yellow');
-        ellipse(venusX + venusEyeSize * 3, venusY - venusEyeSize, venusEyeSize / 3); // left pipil
-        ellipse(venusX, venusY - venusEyeSize, venusEyeSize / 3); // right pupil
-
-        // mouth
-
-
-        fill('black');
-        rect(venusX + 40, venusY + 30, venusSize - 190, 17);
-
-
-        stroke(255);
-        text(story, storyX, storyY);
         
+        
+      narrative( "5 years later King Pletus and Venus made 30 kids, only 4 survived.", " 'where are the spots where are the spots' King Pletus yelled", "Click Spacebar", 400, height - 150, height - 100);
     
-        
-        
-        // saturn one
-
-        fill('red');
-        noStroke();
-        ellipse(venusX + 600, venusY - 90, venusSize2 - 25);
-        stroke(0);
-        
-        // saturn two
-
-        fill('red');
-        noStroke();
-        ellipse(venusX + 490, venusY +220, venusSize2 - 25);
-        stroke(0);
-
-        // saturn three
-        
-        fill('red');
-        noStroke();
-        ellipse(venusX + 860, venusY + 320, venusSize2 - 25);
-        stroke(0);
-
-        
-        
-        
-        
 
 
+        
+        
     } else {
+        
         // no key is pressed (beginning)
         
-        image(g1, 0, 0, width, height)
+        image(g3, 0, 0, width, height) 
 
-        fill ('yellow');
-
-        
-      stroke(255);
-          text(story, storyX, storyY - 310);
-          text(story2, storyX, storyY - 610);
-        
-        
+       narrative( "CLICK", " A, B, or C", "Birth of the Universe", width/2, height-150, height-100); 
         
     }
 }
@@ -453,8 +143,210 @@ function draw() {
 
 
 
+function venus (x, y, size, c) {
+
+
+      var eyeSize = size / 10;
+        
+        
+        //body
+        
+        noFill();
+        fill(c);
+        noStroke();
+        ellipse(x, y, size); 
+        stroke(0);
+
+        //belt
+        stroke('yellow');
+        noFill(0);
+
+
+        arc(x + 10, y + 10, size * 2, size / 2, -1, PI + 0.3); // large belts arc
+
+        noFill(0);
+
+        ellipse(x + 10, y + 10, size * 1.8, size / 2.6); // small belt circle
+
+
+        // eye hider ellipse
+
+        fill(c)
+        noStroke();
+        ellipse(x, y - 20, size - 4, 90);
+
+        // eye
+
+        fill('black');
+        ellipse(x + eyeSize * 3, y - eyeSize, eyeSize); // left eye
+        ellipse(x, y - eyeSize, eyeSize); // right eye 
+
+        // pupil
+        fill('yellow')
+        ellipse(x + eyeSize * 3, y - eyeSize, eyeSize / 3); // left pipil
+        ellipse(x, y - eyeSize, eyeSize / 3); // right pupil
+
+        // mouth
+
+
+        fill('black')
+        rect(x + 40, y + 30, size - 190, 17);  
 
 
 
 
+}
 
+
+function moon (x, y, size) {
+
+
+// moon
+
+        fill('yellow');
+        noStroke();
+
+ 
+        arc(x, y, size, size, -HALF_PI, HALF_PI); // moon background
+        fill(125);
+        arc(x, y, size / 2, size, -HALF_PI, HALF_PI); // moon foreground
+    
+        noFill();
+        stroke(0);
+        arc(x, y, size * 3 / 4, size, -HALF_PI, HALF_PI); // moon contour
+    
+    
+    
+    
+
+        fill('red');
+        noStroke();
+        ellipse(x + 55 , y - 38, 15); // left eye
+        ellipse(x + 80 , y - 42, 15); // right eye
+    
+        fill('white')
+        ellipse(x + 55 , y - 38, 15/5); // left pupil
+        ellipse(x + 80 , y - 42, 15/5); // right pupil
+    
+    
+    
+
+
+}
+
+
+function mars (x, y, size) {
+
+
+  var eyeSize = size / 10;
+
+        //body
+    
+        noFill();
+        fill('black');
+        noStroke();
+        ellipse(x, y, size);
+        stroke(0);
+
+
+        // eye
+
+        fill('yellow');
+        ellipse(x + eyeSize * 3, y - eyeSize, eyeSize); // left eye
+        ellipse(x, y - eyeSize, eyeSize); // right eye 
+
+        // pupils
+
+        fill('orange')
+
+        ellipse(x + eyeSize * 3, y - eyeSize + 10, eyeSize / 3); // left pipil
+        ellipse(x, y - eyeSize + 10, eyeSize / 3); // right pupil
+
+        // mouth
+
+
+        fill('yellow')
+
+        rect(x + 40, y + 30, size - 220, 17);
+
+
+        // mars spots
+
+        noFill();
+
+        fill('grey');
+        noStroke();
+        ellipse (x - 110, y - 60, size / 5); //spot 1
+    
+        stroke(0);
+        noFill();
+
+        fill('grey');
+        noStroke();
+        ellipse(x + 80, y - 100, size / 6); //spot 2
+        stroke(0);
+
+
+        fill('grey');
+        noStroke();
+        ellipse(x - 80, y + 90, size / 8); //spot 3
+        stroke(0);
+
+
+        fill('grey');
+        noStroke();
+        ellipse(x + 70, y + 100, size / 5); //spot 4
+        stroke(0);
+        //    
+        //        
+        fill('yellow');
+        noStroke();
+        ellipse(x + 78, y, size / 70); //spot 5
+        stroke(0);
+
+      
+
+
+}
+
+
+function sun (x, y, size) {
+
+ 
+        // sun
+
+        fill('lightgreen');
+        noStroke();
+        ellipse(x + 600, y - 90, size - 25);
+        stroke(0);
+        
+
+}
+
+
+function narrative (story, instructions, instructions2, x, y, y2) {
+    
+	// narrative
+	stroke(255);
+    fill('red');
+	textSize(20);
+	text(story, x, y );
+    
+	// instructions
+	textSize(20);
+   fill('yellow');
+	text(instructions, x, y2);
+    fill('yellow');
+    textSize(30);
+	text(instructions2, width/2, height -610);
+    
+    
+    
+
+    
+    
+    
+}
+
+
+ 

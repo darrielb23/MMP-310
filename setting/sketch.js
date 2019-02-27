@@ -9,7 +9,6 @@ By Darriel
 // global variables
 
 
-var g;
 var g1;
 var g2;
 var g3;
@@ -18,49 +17,42 @@ var g5;
 var g6;
 var g7;
 
-var venusX = 200;
-var venusY = 200;
-var venusSize2 = 200;
-var venusSize = 200 * 4;
-var venusEyeSize = venusSize2 / 10;
-
-var marsX = 930;
-var marsY = 450;
-var marsSize = 350;
-var marsEyeSize = marsSize / 10;
-
-
-var moonX = 600;
-var moonY = 100;
-var moonSize = 100;
-
-var story = "Battle for the universe";
-var story2 = "Click A, B and C to change setting";
-var storyX;
-var storyY;
-
-
-// settings: day, evening, night - lightblue, mediumslateblue, darkblue
-var currentSetting = "day";
-
-var venusWasClicked = false;
-var marsWasClicked = false;
-
-var sunX = 740;
-var sunY = 100;
-var sunSize = 150;
-
-
-
-function setup() {
-    createCanvas(windowWidth, windowHeight);
-    textSize(40);
-    textAlign(CENTER, CENTER);
-    storyX = width / 2;
-    storyY = height - 50;
-    rectMode(CENTER);
+//var venusX = 200;
+//var venusY = 200;
+//var venusSize2 = 200;
+//var venusSize = 200 * 4;
+//var venusEyeSize = venusSize2 / 10;
+//
+//var marsX = 930;
+//var marsY = 450;
+//var marsSize = 350;
+//var marsEyeSize = marsSize / 10;
+//
+//
+//var moonX = 600;
+//var moonY = 100;
+//var moonSize = 100;
+//
+//var story = "Battle for the universe";
+//var story2 = "Click A, B and C to change setting";
+//var storyX;
+//var storyY;
+//
+//
+//// settings: day, evening, night - lightblue, mediumslateblue, darkblue
+//var currentSetting = "day";
+//
+//var venusWasClicked = false;
+//var marsWasClicked = false;
+//
+//var sunX = 740;
+//var sunY = 100;
+//var sunSize = 150;
 
 
+
+
+function preload() {
     g1 = loadImage("galax1.jpg");
     g2 = loadImage("galax2.jpg");
     g3 = loadImage("galax3.jpg");
@@ -71,67 +63,25 @@ function setup() {
 }
 
 
+function setup() {
+    createCanvas(windowWidth, windowHeight);
+    textSize(40);
+    textAlign(CENTER, CENTER);
+    storyX = width / 2;
+    storyY = height - 50;
+    rectMode(CENTER);
 
-
-
-
+}
 
 function draw() {
     noStroke();
-    background(175);   
+    background(175);
 
     // sun setting
     if (key == 'a') {
-        
-      
-        
-       // first character venus
-        
-        
-        //body
-        
-        noFill();
-        fill('LIGHTSKYBLUE');
-        noStroke();
-        ellipse(venusX, venusY, venusSize2); 
-        stroke(0);
+        image(g1, 0, 0, width, height);
+        venus(); // first character venus
 
-        //belt
-        stroke('yellow');
-        noFill(0);
-
-        //    ellipse (venusX + 10, venusY +10, venusSize * 2, venusSize / 2);  // large belt full circle
-
-        arc(venusX + 10, venusY + 10, venusSize2 * 2, venusSize2 / 2, -1, PI + 0.3); // large belts arc
-
-        noFill(0);
-
-        ellipse(venusX + 10, venusY + 10, venusSize2 * 1.8, venusSize2 / 2.6); // small belt circle
-
-        //    arc (venusX + 10, venusY +10, venusSize * 2, venusSize / 2, -1, PI + 0.3);  // large belts arc
-
-        // eye hider ellipse
-
-        fill('lightskyblue')
-        noStroke();
-        ellipse(venusX, venusY - 20, venusSize2 - 4, 90);
-
-        // eye
-
-        fill('black');
-        ellipse(venusX + venusEyeSize * 3, venusY - venusEyeSize, venusEyeSize); // left eye
-        ellipse(venusX, venusY - venusEyeSize, venusEyeSize); // right eye 
-
-        // pupil
-        fill('yellow')
-        ellipse(venusX + venusEyeSize * 3, venusY - venusEyeSize, venusEyeSize / 3); // left pipil
-        ellipse(venusX, venusY - venusEyeSize, venusEyeSize / 3); // right pupil
-
-        // mouth
-
-
-        fill('black')
-        rect(venusX + 40, venusY + 30, venusSize2 - 190, 17);   	
 
 
         stroke(255);
@@ -160,7 +110,7 @@ function draw() {
 
         // pupils
 
-        fill('orange')
+        fill('orange');
 
         ellipse(marsX + marsEyeSize * 3, marsY - marsEyeSize + 10, marsEyeSize / 3); // left pipil
         ellipse(marsX, marsY - marsEyeSize + 10, marsEyeSize / 3); // right pupil
@@ -169,7 +119,7 @@ function draw() {
         // mouth
 
 
-        fill('yellow')
+        fill('yellow');
 
         rect(marsX + 40, marsY + 30, marsSize - 220, 17);
 
@@ -248,7 +198,7 @@ function draw() {
 
         // eye hider ellipse
 
-        fill('lightskyblue')
+        fill('lightskyblue');
         noStroke();
         ellipse(venusX, venusY - 20, venusSize2 - 4, 50);
 
@@ -259,14 +209,14 @@ function draw() {
         ellipse(venusX, venusY - venusEyeSize, venusEyeSize); // right eye 
 
         // pupil
-        fill('yellow')
+        fill('yellow');
         ellipse(venusX + venusEyeSize * 3, venusY - venusEyeSize, venusEyeSize / 3); // left pipil
         ellipse(venusX, venusY - venusEyeSize, venusEyeSize / 3); // right pupil
 
         // mouth
 
 
-        fill('black')
+        fill('black');
         rect(venusX + 40, venusY + 30, venusSize2 - 190, 17);
 
 
@@ -313,7 +263,7 @@ function draw() {
 
         // pupils
 
-        fill('orange')
+        fill('orange');
 
         ellipse(marsX + marsEyeSize * 3, marsY - marsEyeSize + 10, marsEyeSize / 3); // left pipil
         ellipse(marsX, marsY - marsEyeSize + 10, marsEyeSize / 3); // right pupil
@@ -322,7 +272,7 @@ function draw() {
         // mouth
 
 
-        fill('yellow')
+        fill('yellow');
 
         rect(marsX + 40, marsY + 30, marsSize - 220, 17);
 
@@ -400,14 +350,16 @@ function draw() {
         ellipse(venusX + 10, venusY + 10, venusSize * 1.8, venusSize / 2.6); // small belt circle
 
         //    arc (venusX + 10, venusY +10, venusSize * 2, venusSize / 2, -1, PI + 0.3);  // large belts arc
-        
-        
+
         // eye hider ellipse
 
-        fill('lightskyblue')
+        fill('red');
         noStroke();
-        ellipse(venusX - 5, venusY - venusSize / 6.6 , venusSize - 29, venusSize2 - 70);
-        
+        ellipse(venusX - 10, venusY - venusSize / 5.7, venusSize - 30, venusSize2 - 70);
+
+
+
+
 
         // eye
 
@@ -416,62 +368,62 @@ function draw() {
         ellipse(venusX, venusY - venusEyeSize, venusEyeSize); // right eye 
 
         // pupil
-        fill('yellow')
+        fill('yellow');
         ellipse(venusX + venusEyeSize * 3, venusY - venusEyeSize, venusEyeSize / 3); // left pipil
         ellipse(venusX, venusY - venusEyeSize, venusEyeSize / 3); // right pupil
 
         // mouth
 
 
-        fill('black')
+        fill('black');
         rect(venusX + 40, venusY + 30, venusSize - 190, 17);
 
 
         stroke(255);
         text(story, storyX, storyY);
-        
-    
-        
-        
+
+
+
+
         // saturn one
 
         fill('red');
         noStroke();
         ellipse(venusX + 600, venusY - 90, venusSize2 - 25);
         stroke(0);
-        
+
         // saturn two
 
         fill('red');
         noStroke();
-        ellipse(venusX + 490, venusY +220, venusSize2 - 25);
+        ellipse(venusX + 490, venusY + 220, venusSize2 - 25);
         stroke(0);
 
         // saturn three
-        
+
         fill('red');
         noStroke();
         ellipse(venusX + 860, venusY + 320, venusSize2 - 25);
         stroke(0);
 
-        
-        
-        
-        
+
+
+
+
 
 
     } else {
         // no key is pressed (beginning)
-        
-        image(g5, 0, 0, width, height)
 
- stroke(255);
-fill('yellow')
+        image(g1, 0, 0, width, height)
+
+        fill('yellow');
+
+        stroke(255);
         text(story, storyX, storyY - 310);
         text(story2, storyX, storyY - 610);
-        
-        
-        
     }
 }
+
+
 

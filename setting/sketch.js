@@ -17,37 +17,7 @@ var g5;
 var g6;
 var g7;
 
-//var venusX = 200;
-//var venusY = 200;
-//var venusSize2 = 200;
-//var venusSize = 200 * 4;
-//var venusEyeSize = venusSize2 / 10;
-//
-//var marsX = 930;
-//var marsY = 450;
-//var marsSize = 350;
-//var marsEyeSize = marsSize / 10;
-//
-//
-//var moonX = 600;
-//var moonY = 100;
-//var moonSize = 100;
-//
-//var story = "Battle for the universe";
-//var story2 = "Click A, B and C to change setting";
-//var storyX;
-//var storyY;
-//
-//
-//// settings: day, evening, night - lightblue, mediumslateblue, darkblue
-//var currentSetting = "day";
-//
-//var venusWasClicked = false;
-//var marsWasClicked = false;
-//
-//var sunX = 740;
-//var sunY = 100;
-//var sunSize = 150;
+
 
 
 

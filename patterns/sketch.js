@@ -1,5 +1,6 @@
 /*
-	new grid design
+	new grid design 
+    patterns
 	with save image code
 	week 5 mmp 310
 */

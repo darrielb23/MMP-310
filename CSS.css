@@ -2,8 +2,8 @@ body {
   font-family: fantasy;
   margin: 0;
   padding: 0;
-  background-color: yellow;
-  color: deepskyblue;
+  background-color: deepskyblue;
+  color: black;
 }
 
 #container {
@@ -13,20 +13,20 @@ body {
 }
 
 .link {
-  list-style: none;
-  color: whitesmoke;
+  list-style: black;
+  color: black;
   font-size: 2em;
 }
 
 .link a {
-  color: whitesmoke;
+  color: black;
 }
 
 a {
-  color: red;
+  color: yellow;
   transition: color 500ms
 }
 
 a:hover {
-  color: red;
+  color: yellow;
 }

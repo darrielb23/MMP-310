@@ -25,11 +25,8 @@ var g7;
 function preload() {
     g1 = loadImage("galax1.jpg");
     g2 = loadImage("galax2.jpg");
-    g3 = loadImage("galax3.jpg");
-    g4 = loadImage("galax4.jpg");
-    g5 = loadImage("galax5.jpg");
-    g6 = loadImage("galax6.jpg");
-    g7 = loadImage("galax7.jpg");
+    g3 = loadImage("galax5.jpg");
+  
 }
 
 
@@ -49,7 +46,7 @@ function draw() {
 
     // sun setting
     if (key == 'a') {
-        image(g5, 0, 0, width, height);
+        image(g3, 0, 0, width, height);
         venus(); // first character venus
 
 
@@ -385,7 +382,7 @@ function draw() {
     } else {
         // no key is pressed (beginning)
 
-        image(g1, 0, 0, width, height)
+        image(g3, 0, 0, width, height)
 
         fill('yellow');
 

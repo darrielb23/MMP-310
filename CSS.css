@@ -1,0 +1,32 @@
+body {
+  font-family: fantasy;
+  margin: 0;
+  padding: 0;
+  background-color: yellow;
+  color: deepskyblue;
+}
+
+#container {
+  padding: 50px 0;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.link {
+  list-style: none;
+  color: whitesmoke;
+  font-size: 2em;
+}
+
+.link a {
+  color: whitesmoke;
+}
+
+a {
+  color: red;
+  transition: color 500ms
+}
+
+a:hover {
+  color: red;
+}

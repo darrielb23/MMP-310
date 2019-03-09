@@ -49,7 +49,7 @@ function draw() {
 
     // sun setting
     if (key == 'a') {
-        image(g1, 0, 0, width, height);
+        image(g5, 0, 0, width, height);
         venus(); // first character venus
 
 

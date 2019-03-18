@@ -24,14 +24,14 @@ function setup() {
 //	generatePattern.position(180, height - 50);
 	
 	// columns slider
-	createDiv("Number of Columns");
+	createDiv("magnifeye button");
 	var columnSlider = createSlider(8, 100, columns);
 	columnSlider.input(setColumn);
 	
 	// rows 
 	
 	// bg color
-	createDiv("Background Color");
+	createDiv("random color change");
 	var colorSlider = createSlider(0, 255, g);
 	colorSlider.input(setColor);
 	
@@ -50,7 +50,7 @@ function setColor() {
 }
 
 function pattern() {
-	background(0, g, 127); \\ color bk
+	background(0, g, 127); // color bk
 	
 	var w = width / columns;
 	var h = height / rows;

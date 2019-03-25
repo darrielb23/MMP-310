@@ -51,7 +51,7 @@ function piano(x, y, s) {
 
     //    quad(x, y, x2, y2, x3, y3, x4, y4);
 
-    text("tell you that", x, y);
+    text("I told you", x, y);
 
    
 

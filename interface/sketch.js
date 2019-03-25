@@ -1,6 +1,6 @@
 
 /* global variables */
-var bg = "green";
+var bg = "white";
 var g = 255;
 var columns = 8;
 var rows = 8;

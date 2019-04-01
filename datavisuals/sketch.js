@@ -19,8 +19,8 @@ function draw() {
 	background(51);
 	
 	for (let i = 0; i < champs.getRowCount(); i++) {
-		let ast = champs.getNum(i, 'ASTper');
-		let h = map(ast, 0, 8, 0, height);
+		let ast = champs.get(i, 'Count');
+		let h = map(ast, 0, 11, 0, height);
 		let w = 20;
 		let x = i * (w + 3); // 10  + 1
 		

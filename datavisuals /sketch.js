@@ -24,12 +24,12 @@ function draw() {
 		let w = 20;
 		let x = i * (w + 3); // 10  + 1
 		
-		fill('white');
+		fill('green');
 		if (mouseX > x && mouseX < x + w) {
 			let player = champs.getString(i, 'Player').split('\\')[0];
 			text(player, 100, 200);
 			text(ast, 100, 250);
-			fill('gold');	
+			fill('red');	
 		}
 		rect(x, height - h, w, h);
 	}

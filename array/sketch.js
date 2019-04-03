@@ -10,22 +10,14 @@ var mars = [60, 20, 100, 40, 60, 20, 100, 40]
 function mousePressed() {
 
     var r = random(255);
-    var t = random(255);
+    var g = random(255);
     var b = random(255);
     var c = color(r, g, b)
-
-
     mars.push([mouseX, mouseY, c]);
 }
 
-
-
-
-
-
 function setup() {
     createCanvas(windowWidth, windowHeight);
-
 }
 
 function draw() {

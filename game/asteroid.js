@@ -14,7 +14,7 @@ class Asteroid {
 	}
 	
 	display() {
-		fill(0);
+		fill("red");
 		noStroke();
 		ellipse(this.x, this.y, this.size);
 	}
@@ -29,8 +29,8 @@ class Asteroid {
 		if (d < this.size / 2) {
 			textSize(100);
 			textAlign(CENTER, CENTER);
-			fill('orange');
-			text("You died", width/2, height/2);
+			fill('red');
+			text("GAME OVER", width/2, height/2);
 			noLoop();	
 		}
 	}

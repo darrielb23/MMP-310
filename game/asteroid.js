@@ -9,7 +9,7 @@ class Asteroid {
 		this.size = 100;
 		this.speed = {
 			x: random(-1, 1),
-			y: random(5)
+			y: random(40)
 		};
 	}
 	

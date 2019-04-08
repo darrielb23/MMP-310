@@ -62,7 +62,7 @@ function draw() {
 	background(10);
     
     // adds random asteroid
-	if (random(100) > 99) {
+	if (random(100) > 90) {
 		// create an asteroid
 		asteroids.push(new Asteroid());
 	}

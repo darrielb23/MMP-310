@@ -10,7 +10,7 @@ class Spaceship extends Entity {
     display() {
 
         
-     image(img3, this.x, this.y); 
+     image(img3, this.x, height - 105, 315, 210); 
         
         
         

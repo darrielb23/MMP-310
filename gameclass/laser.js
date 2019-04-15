@@ -2,12 +2,17 @@
 	laser class
 */
 
+
+   
 class Laser extends Entity {
     
-	constructor() {
-        super(spaceship.x - 126, spaceship.y + 81);
+	constructor(x, y) {
+         super(spaceship.x + x, spaceship.y + y);
+        
+        
+        
         this.speed.y = -10; 
-	}
+	} 
 	
 	display() {
 		fill('red');
@@ -16,5 +21,3 @@ class Laser extends Entity {
 	}
 }
 
-
-   

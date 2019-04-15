@@ -2,15 +2,16 @@
 	asteroid class
 */
 
-class Asteroid {
+class Asteroid extends Entity {
 	constructor() {
-		this.x = random(width);
+        super {
+		this.x = random(width);   
 		this.y = -100;
 		this.size = 100;
 		this.speed = {
 			x: random(-1, 1),
 			y: random(40)
-		};
+		};  }
 	}
 	
 	display() {
@@ -38,3 +39,8 @@ class Asteroid {
 
 
 
+class Special extends Asteroid {
+    display() {
+        
+    }
+}

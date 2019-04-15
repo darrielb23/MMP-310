@@ -9,7 +9,7 @@ var asteroids = [];
 
 var lasers = [];
 
-var astriodProb = 98;
+//var astriodProb = 98;
 
 
 
@@ -41,16 +41,19 @@ function draw() {
     
     
     // adds random asteroid
-    if (random(100) > Asteroid) {
+    if (random(100) > 98) {
         // create an asteroid
-        asteroids.push(new Asteroid());
+        if (random(1) > 0.5)
+            asteroids.push(new Asteroid());
+        else 
+            asteroids.push(new Special());
     }
     
 
-    	// add lasers
+    	// add lasers 
 	if (keyIsDown(32) || keyIsDown(88)) {
-		lasers.push(new Laser());
-lasers.push(new Laser());
+		lasers.push(new Laser(94, 81));
+        lasers.push(new Laser(-126,  81));
 //        lasers.push(new Laser2());
 	}
     
@@ -81,7 +84,7 @@ lasers.push(new Laser());
 			if (asteroids[i].collide(lasers[j])) {
 				asteroids[i].died = true;
 				lasers[j].died = true;
-                Asteroid -=0.1; // increasinf prob 
+//                Asteroid -=0.1; // increasinf prob 
 			}
 		}
 	}

@@ -9,17 +9,39 @@ var asteroids = [];
 
 var lasers = [];
 
+var astriodProb = 98;
+
+
+
+
+function preload() {
+	// if you have images
+    
+    img1 = loadImage("cannon.jpeg"); 
+    img2 = loadImage("underwater.jpg");
+    img3 = loadImage("sub.png");
+}
+
+
 function setup() {
     createCanvas(windowWidth, windowHeight);
+    
     noStroke();
+    imageMode(CENTER);
     spaceship = new Spaceship();
 }
 
 function draw() {
     background(10);
 
+     
+    image(img2, width/2, height/2, width, height); 
+    
+    
+    
+    
     // adds random asteroid
-    if (random(100) > 98) {
+    if (random(100) > Asteroid) {
         // create an asteroid
         asteroids.push(new Asteroid());
     }
@@ -28,6 +50,7 @@ function draw() {
     	// add lasers
 	if (keyIsDown(32) || keyIsDown(88)) {
 		lasers.push(new Laser());
+lasers.push(new Laser());
 //        lasers.push(new Laser2());
 	}
     
@@ -58,6 +81,7 @@ function draw() {
 			if (asteroids[i].collide(lasers[j])) {
 				asteroids[i].died = true;
 				lasers[j].died = true;
+                Asteroid -=0.1; // increasinf prob 
 			}
 		}
 	}

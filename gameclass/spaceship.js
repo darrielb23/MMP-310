@@ -9,19 +9,26 @@ class Spaceship extends Entity {
 
     display() {
 
+        
+     image(img3, this.x, this.y); 
+        
+        
+        
+        
+        
 
-        fill('lightskyblue');
-        triangle(
-            this.x, this.y,
-            this.x - this.size, this.y + this.size * 2,
-            this.x + this.size, this.y + this.size * 2
-        );
-
-        fill('orange');
-
-        rect(this.x - 126, this.y + 81, this.w, this.h); // left wing 
-
-        rect(this.x + 94, this.y + 81, this.w, this.h); // right wing
+//        fill('lightskyblue');
+//        triangle(
+//            this.x, this.y,
+//            this.x - this.size, this.y + this.size * 2,
+//            this.x + this.size, this.y + this.size * 2
+//        );
+//
+//        fill('orange');
+//
+//        rect(this.x - 126, this.y + 81, this.w, this.h); // left wing 
+//
+//        rect(this.x + 94, this.y + 81, this.w, this.h); // right wing
 
 
 

@@ -4,20 +4,28 @@
 
 class Asteroid extends Entity {
 	constructor() {
-        super {
-		this.x = random(width);   
-		this.y = -100;
-		this.size = 100;
+        
+        super(random(width), -100); 
 		this.speed = {
 			x: random(-1, 1),
-			y: random(40)
-		};  }
+			y: random(18)
+		};  
 	}
 	
 	display() {
-		fill("red");
-		noStroke();
-		ellipse(this.x, this.y, this.size);
+        
+        
+      
+
+        
+     image(img1, this.x, this.y, this.size); 
+        
+        
+        
+    
+//		fill("red");
+//		noStroke();
+//		ellipse(this.x, this.y, this.size);
 	}
 	
 	update() {

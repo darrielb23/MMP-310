@@ -5,14 +5,15 @@
 class Spaceship extends Entity {
     constructor() {
         super(width / 2, height - 200);
+        this.size = 200;
     }
 
     display() {
 
         
-     image(img3, this.x, height - 105, 315, 210); 
+     image(img3, this.x, this.y, this.size, this.size); 
         
-        
+//       ellipse (this.x, this.y, this.size) 
         
         
         

@@ -9,6 +9,8 @@ var asteroids = [];
 
 var lasers = [];
 
+var lasersize += 4;
+
 //var astriodProb = 98;
 
 
@@ -17,7 +19,7 @@ var lasers = [];
 function preload() {
 	// if you have images
     
-    img1 = loadImage("cannon.jpeg"); 
+    img1 = loadImage("cans.png"); 
     img2 = loadImage("underwater.jpg");
     img3 = loadImage("sub.png");
 }
@@ -53,8 +55,7 @@ function draw() {
     	// add lasers 
 	if (keyIsDown(32) || keyIsDown(88)) {
 		lasers.push(new Laser(94, 81));
-        lasers.push(new Laser(-126,  81));
-//        lasers.push(new Laser2());
+        lasers.push(new Laser(-108,  81));
 	}
     
     

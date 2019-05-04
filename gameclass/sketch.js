@@ -7,9 +7,13 @@ var spaceship;
 
 var asteroids = [];
 
+var upgrade = [];
+
 var lasers = [];
 
-var lasersize += 4;
+var laserSize = 1;
+
+var laserColor = "red";
 
 //var astriodProb = 98;
 
@@ -64,10 +68,42 @@ function draw() {
 	spaceship.update();
       
 
+   for (let i = 0; i < upgrade.length; i++) {
+     upgrade[i].display();
+     upgrade[i].update();   
+       
+       
+    // collision with spaceship
+		if (upgrade[i].collide(spaceship)) {
+            
+            
+			// laser enlargement
+			textAlign(CENTER, CENTER);
+			
+
+            
+            
+            laserColoor = "yellow";
+            
+            laserSize += 2;
+            
+            
+       
+            
+            
+            
+            
+        }
+   }
+    
+    
+    
     
     for (let i = 0; i < asteroids.length; i++) {
         asteroids[i].display();
         asteroids[i].update();
+        
+        
         
         
   // collision with spaceship

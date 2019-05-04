@@ -19,27 +19,5 @@ class Upgrade extends Entity {
 		ellipse(this.x, this.y, this.size);
 	}
 	
-	update() {
-		this.x += this.speed.x;
-		this.y += this.speed.y;
+
 	}
-	
-	collide() {
-        
-        
-        
-        
-        
-		var d = dist(this.x, this.y, spaceship.x, spaceship.y);
-		if (d < this.size / 2) {
-            
-            laser.display 
-            
-			var lasersize	
-            
-            
-            
-            
-		}
-	}
-}

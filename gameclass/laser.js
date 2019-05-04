@@ -15,9 +15,10 @@ class Laser extends Entity {
 	} 
 	
 	display() {
-		fill('red');
+		fill(laserColor);
+//        fill('yellow');
 		noStroke();
-		ellipse (this.x, this.y, this.height, this.width);   
+		ellipse (this.x, this.y, this.height * laserSize, this.width * laserSize);   
 	}
 }
 

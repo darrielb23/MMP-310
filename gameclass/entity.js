@@ -4,9 +4,6 @@
 
 
 
-
-
-
 class Entity {
 	constructor(x, y) {
 		this.x = x;

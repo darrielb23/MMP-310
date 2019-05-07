@@ -1,85 +1,77 @@
-/*
-	new grid design 
-    patterns
-	with save image code
-	week 5 mmp 310
-*/
+var triangles = [];
 
 function setup() {
-	createCanvas(windowWidth, windowHeight);
-	background(255);
-	
-	
-	var columns = 8;
-	var rows = 8;
-	var w = width / columns; // column width
-	var h = height / rows; // row height
-	
-	// nested for loop 
-	for (let x = 0; x <= width; x += w) {
-		for (let y = 0; y <= height; y += h) {
-			
-		
+    createCanvas(windowWidth, windowHeight);
+    noStroke();
 
-			strokeWeight(35);
-			var r = random(4);
-			if (r > 3) {
 
-            stroke(0);
-            fill("blue");
-            ellipse(x+w/2, y+h/2, w, h); //big blue circle
-            
-            fill("blue");
-            ellipse(x + w/4, y + h/4, w/2, h/2); //top left circle
-                
-            } else if (r > 2) {
-                
-                stroke(0);
-            fill("blue");
-            ellipse(x+w/2, y+h/2, w, h); //big blue circle
-            
-            fill("blue");
-            ellipse(x + w - w/4, y + h/4, w/2, h/2); //top right
-            
-          
-            
-			} else if (r > 1) { 
-                
-                stroke(0);
-            fill("yellow");
-            ellipse(x+w/2, y+h/2, w, h); //big blue circle
-            
-            fill("yellow");
-                ellipse(x + w - w/4, y + h - h/4, w/2, h/2); //bottom right circle
+    triangles.push(new Triangle(width / 3, height / 2, 50, 0.025));
+    triangles.push(new Triangle(width / 2, height / 2, 100, 0.025));
+    triangles.push(new Triangle(width / 3 * 2, height / 2, 50, 0.025));
 
-				
-			} else {
-                
-                stroke(0);
-            fill("yellow");
-            ellipse(x+w/2, y+h/2, w, h); //big blue circle
-            
-            fill("yellow");
-                 ellipse(x + w/4, y + h - h/4, w/2, h/2); //bottom left 
-                
-
-                
-                
-                
-				
-			}
-			}
-			
-		}
-	}
+    
+    
+    
+//    (x, y, s, p, )
+    
+    
+    triangles.push(new Triangle(width , height / 2, 50, 0.025));
+    
+    
+    
+    triangles.push(new Triangle(width /4, height / 2, 100, 0.025));
+    triangles.push(new Triangle(width / 4 * 2, height / 2, 50, 0.025));
+    triangles.push(new Triangle(width / 5, height / 2, 50, 0.025));
+    
+    
+    
+    
+    triangles.push(new Triangle(width / 2, height / 2, 100, 0.025));
+    triangles.push(new Triangle(width / 3 * 2, height / 2, 50, 0.025));
 
 
 
-// click to save image to Downloads folder
-function mouseClicked() {
-	save('lattern-1.jpg');
+
+
+
 }
 
+function draw() {
+    background(0);
+    for (let i = 0; i < triangles.length; i++) {
+        triangles[i].display();
+        triangles[i].update();
+    }
+}
+
+class Triangle {
+    constructor(x, y, s, p, ) {
+        this.x = x;
+        this.y = y;
+        this.angle = 0;
+        this.size = s;
+        this.speed = p;
+
+    }
+    display() {
+        push();
+        translate(this.x, this.y);
+        rotate(this.angle);
 
 
 
+        stroke('rgb(0,255,0)');
+        strokeWeight(7);
+        noFill();
+
+
+        triangle(0, -this.size,
+            this.size, this.size,
+            -this.size, this.size);
+
+        pop();
+    }
+    update() {
+        this.angle += this.speed; // speed
+    }
+}

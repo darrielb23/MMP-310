@@ -37,10 +37,10 @@ class Asteroid extends Entity {
 	}
 }
 
-
-
-class Special extends Asteroid {
-    display() {
-        
-    }
-}
+//
+//
+//class Special extends Asteroid {
+//    display() {
+//        
+//    }
+//}

@@ -54,12 +54,12 @@ function draw() {
 
 
     // adds random asteroid
-    if (random(100) > 98) {
+    if (random(100) > 97) {
         // create an asteroid
         if (random(1) > 0.5)
             asteroids.push(new Asteroid());
         else
-            asteroids.push(new Special());
+            asteroids.push(new Asteroid());
     }
 
 
@@ -106,8 +106,8 @@ function draw() {
             // end game
             textAlign(CENTER, CENTER);
             textSize(100);
-            fill('orange');
-            text('YOU DIED', width / 2, height / 2);
+            fill('yellow');
+            text('YOU DIED !!', width / 2, height / 2);
             noLoop();
         }
 
@@ -116,7 +116,7 @@ function draw() {
             if (asteroids[i].collide(lasers[j])) {
                 asteroids[i].died = true;
                 lasers[j].died = true;
-                //                Asteroid -=0.1; // increasinf prob 
+                
             }
         }
     }

@@ -40,10 +40,10 @@ class Asteroid extends Entity {
 }
 
 
-
-class Special extends Asteroid {
-    display() {
-        fill('pink')
-        ellipse(this.x, this.y, this.size);
-    }
-}
+//
+//class Special extends Asteroid {
+//    display() {
+//        fill('pink')
+//        ellipse(this.x, this.y, this.size);
+//    }
+//}

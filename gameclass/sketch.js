@@ -56,7 +56,7 @@ function draw() {
     // adds random asteroid
     if (random(100) > 97) {
         // create an asteroid
-        if (random(1) > 0.5)
+        if (random(100) > 95)
             asteroids.push(new Asteroid());
         else
             asteroids.push(new Asteroid());
@@ -106,9 +106,12 @@ function draw() {
             // end game
             textAlign(CENTER, CENTER);
             textSize(100);
-            fill('yellow');
-            text('YOU DIED !!', width / 2, height / 2);
-            noLoop();
+            fill('red');
+			text("GAME OVER", width/2, height/2);
+			noLoop();
+            
+            
+			
         }
 
         // detect all lasers

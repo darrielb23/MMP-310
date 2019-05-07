@@ -15,7 +15,7 @@ class Asteroid extends Entity {
 	}
 	
 	display() {
-		fill("red");
+		fill("purple");
 		noStroke();
 		ellipse(this.x, this.y, this.size);
 	}
@@ -24,18 +24,20 @@ class Asteroid extends Entity {
 		this.x += this.speed.x;
 		this.y += this.speed.y;
 	}
+    
+    }
 	
-	collide() {
-		var d = dist(this.x, this.y, spaceship.x, spaceship.y);
-		if (d < this.size / 2) {
-			textSize(100);
-			textAlign(CENTER, CENTER);
-			fill('red');
-			text("GAME OVER", width/2, height/2);
-			noLoop();	
-		}
-	}
-}
+//	collide() {
+//		var d = dist(this.x, this.y, spaceship.x, spaceship.y);
+//		if (d < this.size / 2) {
+//			textSize(100);
+//			textAlign(CENTER, CENTER);
+//			fill('red');
+//			text("GAME OVER", width/2, height/2);
+//			noLoop();	
+//		}
+//	}
+
 
 //
 //

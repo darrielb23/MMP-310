@@ -3,6 +3,17 @@
 	spaceship object
 */
 
+
+
+	// score
+// one point for every asteroid destroyed
+var score = 0;
+
+// player lives
+var lives = 3;
+	
+
+
 var spaceship;
 
 var asteroids = [];
@@ -152,6 +163,19 @@ function draw() {
     }
 
 
+	/* user display */
+	
+	// score
+	fill('orange');
+	textSize(40);
+	text('Score: ' + score, width - 200, 40);
+	
+	// lives
+//	text('Lives: ' + lives, 70, 20);
+	for (let i = 0; i < lives; i++) {
+		var x = 20 + i * 30;
+		rect(x, 20, 20, 20);
+	}
 
 
 }

@@ -52,7 +52,7 @@ function draw() {
     g = random(0, 255);
 
     fill(r, g, b, 160 );
-//rectMode = CENTER;
+
     rect(0, 0, width, height);
  
 }

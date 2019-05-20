@@ -1,23 +1,24 @@
 var triangles = [];
 
+var r, g, b;
+
 function setup() {
     createCanvas(windowWidth, windowHeight);
-    fill("red");
+    r = random(0, 255);
+    b = random(0, 255);
+    g = random(0, 255);
+
     noStroke();
 
-
-
-    triangles.push(new Triangle(width / 2, height / 2, 200, 0.025, "pink")); //five
+    triangles.push(new Triangle(width / 2, height / 2, 200, 0.025, "green")); //five
     triangles.push(new Triangle(width / 2, height / 2, 200, -0.025, "pink")); //five
 
-    triangles.push(new Triangle(width / 5, height / 2, 200, 0.025, "pink")); //one
+    triangles.push(new Triangle(width / 5, height / 2, 200, 0.025, "green")); //one
     triangles.push(new Triangle(width / 5, height / 2, 200, -0.025, "pink")); //one
 
-    triangles.push(new Triangle(900, height / 2, 200, 0.025, "pink")); //five
+    triangles.push(new Triangle(900, height / 2, 200, 0.025, "green")); //five
 
     triangles.push(new Triangle(900, height / 2, 200, -0.025, "pink")); //five
-
-
 
     //    (x, y, s, p, )
 
@@ -39,11 +40,21 @@ function setup() {
 }
 
 function draw() {
-    background(157);
+    background(0);
+
     for (let i = 0; i < triangles.length; i++) {
         triangles[i].display();
         triangles[i].update();
     }
+
+    r = random(0, 255);
+    b = random(0, 255);
+    g = random(0, 255);
+
+    fill(r, g, b, 160 );
+//rectMode = CENTER;
+    rect(0, 0, width, height);
+ 
 }
 
 class Triangle {
@@ -53,7 +64,7 @@ class Triangle {
         this.angle = 0;
         this.size = s;
         this.speed = p;
-//        this.color = clr || color('rgb(0,255,0)');
+        //        this.color = clr || color('rgb(0,255,0)');
         this.color = clr || color("black");
     }
     display() {

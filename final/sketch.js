@@ -2,42 +2,44 @@ var triangles = [];
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
+    fill("red");
     noStroke();
 
 
-    triangles.push(new Triangle(width / 3, height / 2, 50, 0.025));
-    triangles.push(new Triangle(width / 2, height / 2, 100, 0.025));
-    triangles.push(new Triangle(width / 3 * 2, height / 2, 50, 0.025));
 
-    
-    
-    
-//    (x, y, s, p, )
-    
-    
-    triangles.push(new Triangle(width , height / 2, 50, 0.025));
-    
-    
-    
-    triangles.push(new Triangle(width /4, height / 2, 100, 0.025));
-    triangles.push(new Triangle(width / 4 * 2, height / 2, 50, 0.025));
-    triangles.push(new Triangle(width / 5, height / 2, 50, 0.025));
-    
-    
-    
-    
-    triangles.push(new Triangle(width / 2, height / 2, 100, 0.025));
-    triangles.push(new Triangle(width / 3 * 2, height / 2, 50, 0.025));
+    triangles.push(new Triangle(width / 2, height / 2, 200, 0.025, "pink")); //five
+    triangles.push(new Triangle(width / 2, height / 2, 200, -0.025, "pink")); //five
+
+    triangles.push(new Triangle(width / 5, height / 2, 200, 0.025, "pink")); //one
+    triangles.push(new Triangle(width / 5, height / 2, 200, -0.025, "pink")); //one
+
+    triangles.push(new Triangle(900, height / 2, 200, 0.025, "pink")); //five
+
+    triangles.push(new Triangle(900, height / 2, 200, -0.025, "pink")); //five
 
 
 
+    //    (x, y, s, p, )
 
 
+    var columns = 6;
+    var w = width / columns;
 
+    var rows = 4;
+    var h = height / rows;
+
+    for (let x = w; x < width - w / 2; x += w) {
+        for (let y = h; y < height - h / 2; y += h) {
+            triangles.push(new Triangle(x, y, 100, 0.025));
+            triangles.push(new Triangle(x, y, 100, -0.025));
+
+
+        }
+    }
 }
 
 function draw() {
-    background(0);
+    background(157);
     for (let i = 0; i < triangles.length; i++) {
         triangles[i].display();
         triangles[i].update();
@@ -45,13 +47,14 @@ function draw() {
 }
 
 class Triangle {
-    constructor(x, y, s, p, ) {
+    constructor(x, y, s, p, clr) {
         this.x = x;
         this.y = y;
         this.angle = 0;
         this.size = s;
         this.speed = p;
-
+//        this.color = clr || color('rgb(0,255,0)');
+        this.color = clr || color("black");
     }
     display() {
         push();
@@ -60,7 +63,10 @@ class Triangle {
 
 
 
-        stroke('rgb(0,255,0)');
+        //        stroke('rgb(0,255,0)');
+
+        stroke(this.color);
+
         strokeWeight(7);
         noFill();
 

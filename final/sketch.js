@@ -1,6 +1,8 @@
 var triangles = [];
 
 var r, g, b;
+var blinkCount = 0;
+var blinkCounter = 4;
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
@@ -46,15 +48,23 @@ function draw() {
         triangles[i].display();
         triangles[i].update();
     }
-
+    
+if (blinkCount = blinkCounter) {
     r = random(0, 255);
     b = random(0, 255);
     g = random(0, 255);
-
-    fill(r, g, b, 160 );
+    blinkCounter = 2; 
+    }
+     
+    blinkCount ++;
+    
+    
+    
+    
+    fill(r, g, b, 160);
 
     rect(0, 0, width, height);
- 
+
 }
 
 class Triangle {

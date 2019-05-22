@@ -1,8 +1,8 @@
 var triangles = [];
 
 var r, g, b;
-var blinkCount = 0;
-var blinkCounter = 4;
+var blinkCount = 4;
+var blinkCounter = 0;
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
